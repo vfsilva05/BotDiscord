@@ -59,6 +59,21 @@ O projeto é um bot para Discord que fornece um comando /embed para enviar mensa
     /mensagem mensagem: "Minha Mensagem"
     ```
 
+## Como Usar - Enviar Arquivo BOT
+
+1. **Digite o comando `/enviararquivo`** no canal de texto onde você deseja enviar a mensagem.
+2. **Preencha as opções** com os detalhes desejados:
+    - Arquivo.
+
+## Exemplos
+
+- Comando para enviar um arquivo pelo bot:
+
+    ```
+    /arquivo arquivo: (anexe o arquivo na janela que irá abrir)
+    ```
+
+
 
 ## Guia de Instalação
 
@@ -94,7 +109,7 @@ GUILD_ID=seu-guild-id-aqui
 
 ### 4. Configurar Cargos Permitidos
 
-No arquivo module_embed.js, defina os IDs dos cargos que podem utilizar o comando **/embed**. Para obter o ID de um cargo, siga estes passos:
+Nos modulos, defina os IDs dos cargos que podem utilizar os comandos. Para obter o ID de um cargo, siga estes passos:
 
 - 1°  No Discord, vá para as configurações do servidor.
 - 2°  Selecione a aba "Cargos".
