@@ -44,6 +44,18 @@ async function deployCommands() {
                         },
                     ],
                 },
+                {
+                    name: 'mensagem', // Novo comando
+                    description: 'Envia uma mensagem de texto simples',
+                    options: [
+                        {
+                            type: 3, 
+                            name: 'mensagem',
+                            description: 'O conteúdo da mensagem',
+                            required: true,
+                        },
+                    ],
+                },
             ],
         });
 

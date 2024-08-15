@@ -14,7 +14,7 @@ O projeto é um bot para Discord que fornece um comando /embed para enviar mensa
     - **footer:** Define o rodapé da mensagem.
     - **image:** Define a URL da imagem que será exibida na mensagem.
 
-## Como Usar
+## Como Usar - Mensagem Embed
 
 1. **Digite o comando `/embed`** no canal de texto onde você deseja enviar a mensagem.
 2. **Preencha as opções** com os detalhes desejados:
@@ -42,6 +42,21 @@ O projeto é um bot para Discord que fornece um comando /embed para enviar mensa
 
     ```
     /embed image:"https://exemplo.com/minha-imagem.jpg"
+    ```
+
+
+## Como Usar - Mensagem BOT
+
+1. **Digite o comando `/mensagem`** no canal de texto onde você deseja enviar a mensagem.
+2. **Preencha as opções** com os detalhes desejados:
+    - Mensagem.
+
+## Exemplos
+
+- Comando para criar uma mensagem:
+
+    ```
+    /mensagem mensagem: "Minha Mensagem"
     ```
 
 
