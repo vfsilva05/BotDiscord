@@ -2,7 +2,8 @@ require('dotenv').config();
 const { Client, GatewayIntentBits } = require('discord.js');
 const deployCommands = require('./deploy_commands');
 const handleEmbedCommands = require('./module_embed');
-const handleMessageCommands = require('./module_message'); // Novo módulo
+const handleMessageCommands = require('./module_message');
+const handleFileCommands = require('./module_file'); 
 
 const client = new Client({
     intents: [
@@ -14,10 +15,11 @@ const client = new Client({
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    deployCommands(); // Mover o deployCommands aqui
+    deployCommands();
     client.on('interactionCreate', interaction => {
         handleEmbedCommands(interaction);
-        handleMessageCommands(interaction); // Adiciona o novo handler
+        handleMessageCommands(interaction);
+        handleFileCommands(interaction); 
     });
 });
 
