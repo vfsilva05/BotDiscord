@@ -1,7 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 
 // Substitua pelos IDs reais dos cargos
-const allowedRoles = ['0000000000', '00000000000'];
+const allowedRoles = ['1261748785042952232', '1261760124083765330'];
 
 async function handleCommands(interaction) {
     if (!interaction.isCommand()) return;
@@ -11,7 +11,6 @@ async function handleCommands(interaction) {
     if (commandName === 'embed') {
         const member = interaction.member;
 
-        
         const hasRole = allowedRoles.some(roleId => member.roles.cache.has(roleId));
 
         if (!hasRole) {
@@ -24,20 +23,15 @@ async function handleCommands(interaction) {
         const footer = options.getString('footer');
         const image = options.getString('image');
 
-        
         const embed = new EmbedBuilder();
 
         if (title) embed.setTitle(title);
         if (description) embed.setDescription(description.replace(/\\n/g, '\n'));
 
-        
-        try {
-            if (color) {
-                const convertedColor = color.startsWith('#') ? color : `#${parseInt(color, 16).toString(16).padStart(6, '0')}`;
-                embed.setColor(convertedColor);
-            }
-        } catch (error) {
-            console.error('Invalid color format:', color);
+        // Tratamento para cor com validação
+        if (color && /^#[0-9A-F]{6}$/i.test(color)) {
+            embed.setColor(color);
+        } else if (color) {
             return interaction.reply({ content: 'A cor fornecida é inválida. Por favor, use um código de cor hexadecimal válido.', ephemeral: true });
         }
 
@@ -45,10 +39,8 @@ async function handleCommands(interaction) {
         if (image) embed.setImage(image);
 
         try {
-            
+            // Envia a embed no canal onde o comando foi usado
             await interaction.channel.send({ embeds: [embed] });
-            
-            
             await interaction.reply({ content: 'Embed enviada com sucesso!', ephemeral: true });
         } catch (error) {
             console.error('Failed to send embed:', error);

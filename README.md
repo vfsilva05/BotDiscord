@@ -63,6 +63,7 @@ cd seu-repositorio
 Certifique-se de que você tem o Node.js instalado. Em seguida, instale as dependências do projeto:
 
 ```bash
+npm init -y
 npm install discord.js dotenv
 ```
 
