@@ -13,31 +13,31 @@ async function deployCommands() {
                     description: 'Envia uma mensagem embed personalizada',
                     options: [
                         {
-                            type: 3, // STRING
+                            type: 3, 
                             name: 'title',
                             description: 'O título da embed',
                             required: false,
                         },
                         {
-                            type: 3, // STRING
+                            type: 3, 
                             name: 'description',
                             description: 'A descrição da embed (use \\n para nova linha)',
                             required: false,
                         },
                         {
-                            type: 3, // STRING
+                            type: 3, 
                             name: 'color',
                             description: 'A cor da embed (hex code)',
                             required: false,
                         },
                         {
-                            type: 3, // STRING
+                            type: 3, 
                             name: 'footer',
                             description: 'O rodapé da embed',
                             required: false,
                         },
                         {
-                            type: 3, // STRING
+                            type: 3, 
                             name: 'image',
                             description: 'A URL da imagem da embed',
                             required: false,

@@ -1,7 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 
 // Substitua pelos IDs reais dos cargos
-const allowedRoles = ['1261748785042952232', '1261760124083765330'];
+const allowedRoles = ['0000000000', '00000000000'];
 
 async function handleCommands(interaction) {
     if (!interaction.isCommand()) return;
@@ -11,7 +11,7 @@ async function handleCommands(interaction) {
     if (commandName === 'embed') {
         const member = interaction.member;
 
-        // Verifica se o usuário tem um dos cargos permitidos
+        
         const hasRole = allowedRoles.some(roleId => member.roles.cache.has(roleId));
 
         if (!hasRole) {
@@ -24,13 +24,13 @@ async function handleCommands(interaction) {
         const footer = options.getString('footer');
         const image = options.getString('image');
 
-        // Cria o embed
+        
         const embed = new EmbedBuilder();
 
         if (title) embed.setTitle(title);
         if (description) embed.setDescription(description.replace(/\\n/g, '\n'));
 
-        // Valida e define a cor do embed
+        
         try {
             if (color) {
                 const convertedColor = color.startsWith('#') ? color : `#${parseInt(color, 16).toString(16).padStart(6, '0')}`;
@@ -45,9 +45,10 @@ async function handleCommands(interaction) {
         if (image) embed.setImage(image);
 
         try {
-            // Envia o embed no canal
+            
             await interaction.channel.send({ embeds: [embed] });
-            // Confirmação para o usuário de que a mensagem foi enviada
+            
+            
             await interaction.reply({ content: 'Embed enviada com sucesso!', ephemeral: true });
         } catch (error) {
             console.error('Failed to send embed:', error);
